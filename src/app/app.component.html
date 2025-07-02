@@ -8,6 +8,7 @@
         [avatar]="users[0].avatar"
         [name]="users[0].name"
         (select)="onSelectUser($event)"
+        (select2)="onSelectUser2($event)"
       />
     </li>
     <li>
@@ -16,6 +17,7 @@
         [avatar]="users[1].avatar"
         [name]="users[1].name"
         (select)="onSelectUser($event)"
+        (select2)="onSelectUser2($event)"
       />
     </li>
     <li>
@@ -24,6 +26,7 @@
         [avatar]="users[2].avatar"
         [name]="users[2].name"
         (select)="onSelectUser($event)"
+        (select2)="onSelectUser2($event)"
       />
     </li>
     <li>
@@ -32,7 +35,12 @@
         [avatar]="users[3].avatar"
         [name]="users[3].name"
         (select)="onSelectUser($event)"
+        (select2)="onSelectUser2($event)"
       />
     </li>
   </ul>
+
+  <app-tasks 
+    [name]="selectedUserId"
+  />
 </main>
