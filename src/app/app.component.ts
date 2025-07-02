@@ -13,13 +13,13 @@ import { TasksComponent } from "./tasks/tasks.component";
 })
 export class AppComponent {
   users = DUMMY_USERS; 
-  selectedUserId = 'Select a user to show tasks';
+  selectedUserName?: string;
 
   onSelectUser(id: string) {
     console.log(id);
   }
 
   onSelectUser2(name: string) {
-    this.selectedUserId = name;
+    this.selectedUserName = name;
   }
 }

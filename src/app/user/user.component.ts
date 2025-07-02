@@ -1,5 +1,18 @@
 import { Component, Input, Output, EventEmitter, input, output } from '@angular/core';
 
+
+/* type User = {
+  id: string;
+  avatar: string;
+  name: string;
+} */  // Type and interface here work the same, interface is more used for a cases like this one
+
+interface User {
+  id: string;
+  avatar: string;
+  name: string;
+}  
+
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -10,9 +23,11 @@ import { Component, Input, Output, EventEmitter, input, output } from '@angular/
 
 export class UserComponent {
 
-  @Input({ required: true }) id!: string;
+  /* @Input({ required: true }) id!: string;
   @Input({ required: true }) avatar!: string;
-  @Input({ required: true }) name!: string;
+  @Input({ required: true }) name!: string; */
+  // More compact:
+  @Input({ required: true }) user!: User;
   @Output() select = new EventEmitter<string>();  // type specification is not required as we can emit any type of data, but specifying will ensure that only what we want will work
 
   @Output() select2 = new EventEmitter<string>();
@@ -25,11 +40,11 @@ export class UserComponent {
   select = output<string>();  */ // (new function) output doesnt use signals, but is a usefuls alternative to EventEmitter if we dont want any decorators
 
   get imagePath() {
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.user.avatar;
   }
 
   onSelectUser() {
-    this.select.emit(this.id); 
-    this.select2.emit(this.name);
+    this.select.emit(this.user.id);
+    this.select2.emit(this.user.name);
   }
 }
