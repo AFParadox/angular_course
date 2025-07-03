@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, input, output } from '@angular/core';
-
+import { type User } from "./user.model"
 
 // type User = {
 //   id: string;
@@ -7,11 +7,6 @@ import { Component, Input, Output, EventEmitter, input, output } from '@angular/
 //   name: string;
 // }  // Type and interface here work the same, interface is more used for a cases like this one
 
-interface User {
-  id: string;
-  avatar: string;
-  name: string;
-}  
 
 @Component({
   selector: 'app-user',
