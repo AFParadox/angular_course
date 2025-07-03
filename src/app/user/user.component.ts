@@ -23,6 +23,7 @@ export class UserComponent {
   @Input({ required: true }) name!: string; */
   // More compact:
   @Input({ required: true }) user!: User;
+  @Input({ required: true }) selected!: boolean;
   @Output() select = new EventEmitter<string>();  // type specification is not required as we can emit any type of data, but specifying will ensure that only what we want will work
 
   @Output() select2 = new EventEmitter<string>();
