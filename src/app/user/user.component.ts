@@ -1,11 +1,11 @@
 import { Component, Input, Output, EventEmitter, input, output } from '@angular/core';
 
 
-/* type User = {
-  id: string;
-  avatar: string;
-  name: string;
-} */  // Type and interface here work the same, interface is more used for a cases like this one
+// type User = {
+//   id: string;
+//   avatar: string;
+//   name: string;
+// }  // Type and interface here work the same, interface is more used for a cases like this one
 
 interface User {
   id: string;
