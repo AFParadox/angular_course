@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { type Task } from "../tasks/task/task.model";
+import { type Task } from "../task/task.model";
 
 @Component({
   selector: 'app-new-task',
@@ -11,11 +11,16 @@ import { type Task } from "../tasks/task/task.model";
 export class NewTaskComponent {
   @Output() newTask = new EventEmitter<boolean>();
   @Output() newTaskObj = new EventEmitter<Task>();
+  @Output() cancel = new EventEmitter<void>();
   tempTask?: Task;
 
-  onConfirmNewTask(){
-    // this.tempTask.title = document.getElementById("title").value;
-    this.newTask.emit(false);
-    this.newTaskObj.emit(this.tempTask);
+  // onConfirmNewTask() {
+  //   // this.tempTask.title = document.getElementById("title").value;
+  //   this.newTask.emit(false);
+  //   this.newTaskObj.emit(this.tempTask);
+  // }
+
+  onCancel() {
+    this.cancel.emit();
   }
 }

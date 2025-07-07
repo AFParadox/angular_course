@@ -3,8 +3,7 @@ import { HeaderComponent } from "./header/header.component";
 import { UserComponent } from "./user/user.component";
 import { DUMMY_USERS } from "./dummy-users";
 import { TasksComponent } from "./tasks/tasks.component";
-import { NewTaskComponent } from "./new-task/new-task.component";
-import { type Task } from "./tasks/task/task.model";
+import { NewTaskComponent } from "./tasks/new-task/new-task.component";
 
 @Component({
   selector: 'app-root',
@@ -17,8 +16,6 @@ export class AppComponent {
   users = DUMMY_USERS;
   selectedUserName?: string;
   selectedUserId = '';
-  newTask = false;
-  @Output() tempTask = new EventEmitter<Task>();
 
 
   onSelectUser(id: string) {
@@ -27,14 +24,6 @@ export class AppComponent {
 
   onSelectUser2(name: string) {
     this.selectedUserName = name;
-  }
-
-  onNewTask(flag: boolean) {
-    this.newTask = flag;
-  }
-
-  onConfirmNewTask(new_and_original_task: Task){
-    this.tempTask.emit(new_and_original_task);
   }
 
   get selectedUser() {
